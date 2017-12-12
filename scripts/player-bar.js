@@ -14,8 +14,18 @@
     const nextSongIndex = currentSongIndex + 1;
     //checking to see if there is a next song before it calls  player.playPause(). Fix that with an if statement that checks whether the value of  nextSongIndex is greater than or equal to the length of album.songs, and if it is, execute a return statement.
     if (nextSongIndex >= album.songs.length) { return; }
-    
+
     const nextSong = album.songs[nextSongIndex];
     player.playPause(nextSong);
+  });
+
+  $('button#previous').on('click', function() {
+    if (player.playState !== 'playing') { return; }
+    const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
+    const prevSongIndex = currentSongIndex - 1;
+    if (currentSongIndex === 0) { return; }
+    const prevSong = album.songs[prevSongIndex];
+    player.playPause(prevSong);
+
   });
 }
