@@ -18,6 +18,7 @@
      // make song element clickable so we can play and pause wnen clicked. player object has a .playPause() method. All we need to do is pass this method a song object inside a click event handler.
      song.element.on('click', event => {
        player.playPause(song);
+       $('button#play-pause').attr('playState', player.playState);
      });
     // use append method to append song.element to #song-list
      $('#song-list').append(song.element);
