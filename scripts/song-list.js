@@ -12,7 +12,7 @@
           </button>
          </td>
          <td>${song.title}</td>
-         <td>${song.duration}</td>
+         <td>${player.prettyTime(song.duration)}</td>
         </tr>
      `);
      // make song element clickable so we can play and pause wnen clicked. player object has a .playPause() method. All we need to do is pass this method a song object inside a click event handler.
